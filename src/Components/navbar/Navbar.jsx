@@ -8,7 +8,7 @@ const MobileNavbar = () => {
   };
 
   return (
-    <nav className="sticky p-4">
+   <nav className="sticky top-0 z-50 bg-black p-4">
       <div className="flex items-center justify-between">
         {/* Left side: Back button and title */}
         <div className="flex items-center space-x-3">
