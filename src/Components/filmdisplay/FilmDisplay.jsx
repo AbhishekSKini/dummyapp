@@ -11,7 +11,6 @@ const FilmDisplay = () => {
   const [isFetching, setIsFetching] = useState(true);
   const [page, setPage] = useState(1);
   const searchedWord = useSelector((state) => state.searchedWordStore.value);
-  console.log("searchedWord", searchedWord);
   const getData = (pageNum) => {
     fetch(pageurl + "/" + "data/page" + `${pageNum}` + ".json")
       .then((res) => res.json()) // Parse the response as JSON
@@ -24,7 +23,6 @@ const FilmDisplay = () => {
           ...prevData,
           ...data?.page?.["content-items"].content,
         ]);
-        // Store the fetched data in state
         setPage((page) => page + 1);
         setIsFetching(false);
       })
@@ -37,7 +35,6 @@ const FilmDisplay = () => {
   }, [searchedWord]);
 
   const searchFilter = () => {
-    console.log("searchFilter");
     if (!searchedWord.length) {
       setFilteredData(filmData);
     } else {
@@ -50,7 +47,7 @@ const FilmDisplay = () => {
     }
   };
   useEffect(() => {
-    // Fetch data from the API
+    // Fetch data from the API and page number set to 3 since it is already known
     isFetching && page < 4 && getData(page);
   }, [isFetching]);
 
