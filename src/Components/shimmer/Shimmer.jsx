@@ -4,7 +4,7 @@ const Shimmer = () => {
   return (
     <div  className=" p-4 ">
     <div
-      className="w-[7rem] h-[15rem] object-cover rounded-md mb-2 bg-white"></div>   
+      className=" h-[8rem] object-cover rounded-md mb-2 bg-white aspect-ratio-2/3"></div>   
   </div>
   )
 }
