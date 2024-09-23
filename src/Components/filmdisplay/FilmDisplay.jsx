@@ -67,7 +67,7 @@ const FilmDisplay = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="grid grid-cols-3  gap-4 p-2">
+    <div className="grid grid-cols-3  gap-4 p-4">
       {filteredData?.map((item, index) => (
         <Suspense fallback={<Shimmer />}>
           <FilmContent item={item} index={index} />
