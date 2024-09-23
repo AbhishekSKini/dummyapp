@@ -4,7 +4,7 @@ const FilmContent = (props) => {
   const missingPoster =
     "https://test.create.diagnal.com/images/placeholder_for_missing_posters.png";
   const shrinkTheTitle = (name) => {
-    if (name.length > 20) return name.slice(0, 20) + "...";
+    if (name.length > 15) return name.slice(0, 15) + "...";
     return name;
   };
   return (
