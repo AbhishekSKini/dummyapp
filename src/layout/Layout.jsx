@@ -1,14 +1,33 @@
-import React from 'react'
-import Navbar from '../Components/navbar/Navbar'
-import FilmDisplay from '../Components/filmdisplay/FilmDisplay'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import DataListing from '../components/DataListing/DataListing';
+import DataView from '../components/DataViewing/DataView';
 
-const Layout = () => {
+// // Define interface for search state
+// interface SearchState {
+//   value: string;
+// }
+
+// // Define interface for name state
+// interface NameState {
+//   value: string;
+// }
+
+// Define combined state interface
+// interface RootState {
+//   search: SearchState;
+//   name: NameState;
+// }
+
+const Layout= () => {
+ 
+
   return (
     <div>
-      <Navbar/>
-      <FilmDisplay />
+  <DataListing/>
+  <DataView/>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

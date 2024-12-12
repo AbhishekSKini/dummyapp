@@ -1,0 +1,70 @@
+{
+ 
+  "covidData": [
+    
+    {
+      "state": "Andhra Pradesh",
+      "totalCases": 100000,
+      "activeCases": 20000,
+      "recovered": 75000,
+      "deaths": 5000,
+      "coordinates": { "lat": 15.9129, "lng": 79.7400 }
+    },
+    {
+      "state": "Bihar",
+      "totalCases": 80000,
+      "activeCases": 15000,
+      "recovered": 62000,
+      "deaths": 3000,
+      "coordinates": { "lat": 25.0961, "lng": 85.3131 }
+    },
+    {
+      "state": "Delhi",
+      "totalCases": 200000,
+      "activeCases": 40000,
+      "recovered": 150000,
+      "deaths": 10000,
+      "coordinates": { "lat": 28.7041, "lng": 77.1025 }
+    },
+    {
+      "state": "Karnataka",
+      "totalCases": 180000,
+      "activeCases": 30000,
+      "recovered": 140000,
+      "deaths": 10000,
+      "coordinates": { "lat": 15.3173, "lng": 75.7139 }
+    },
+    {
+      "state": "Maharashtra",
+      "totalCases": 400000,
+      "activeCases": 50000,
+      "recovered": 330000,
+      "deaths": 20000,
+      "coordinates": { "lat": 19.7515, "lng": 75.7139 }
+    },
+    {
+      "state": "Tamil Nadu",
+      "totalCases": 220000,
+      "activeCases": 30000,
+      "recovered": 180000,
+      "deaths": 10000,
+      "coordinates": { "lat": 11.1271, "lng": 78.6569 }
+    },
+    {
+      "state": "Uttar Pradesh",
+      "totalCases": 150000,
+      "activeCases": 20000,
+      "recovered": 120000,
+      "deaths": 10000,
+      "coordinates": { "lat": 26.8467, "lng": 80.9462 }
+    },
+    {
+      "state": "West Bengal",
+      "totalCases": 120000,
+      "activeCases": 15000,
+      "recovered": 100000,
+      "deaths": 5000,
+      "coordinates": { "lat": 22.9868, "lng": 87.8550 }
+    }
+  ]
+}

@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import searchReducer from  "./slicereducer"
+import { configureStore } from "@reduxjs/toolkit";
+import covidDataReducer from "./covidDataSlice";
 
-export default configureStore({
+const store = configureStore({
   reducer: {
-    searchedWordStore: searchReducer
-  }
-})
+    covidDataStore: covidDataReducer, // Register the COVID data reducer
+  },
+});
+
+export default store;
