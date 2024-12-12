@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import PieChart from './PieChart';
 import LineChart from './LineChart';
+import MapView from './MapView';
 
 const DataView = () => {
     const [selectedState, setSelectedState] = useState("Countrywide");
@@ -92,6 +93,9 @@ const DataView = () => {
                 <div style={{ marginTop: '20px', width: '100%' }}>
                     <PieChart data={filteredData} />
                 </div>
+
+                {/* Map View */}
+                <MapView data={filteredData} />
 
                 {/* Add Line Chart */}
                 <div style={{ marginTop: "30px" }}>
