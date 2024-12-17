@@ -7,7 +7,7 @@ const Layout= () => {
  
 
   return (
-    <div>
+    <div className='ml-10'>
   <DataListing/>
   <DataView/>
     </div>

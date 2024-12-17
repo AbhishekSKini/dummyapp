@@ -2,55 +2,38 @@ import React, { memo } from "react";
 import { CovidTableProps } from "../../types/type";
 
 const CovidTable: React.FC<CovidTableProps> = ({ data }) => {
-
-
-    
   return (
-    <div>
-      <h1>COVID-19 Cases in India</h1>
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          margin: "20px 0",
-          fontSize: "18px",
-          textAlign: "left",
-        }}
-      >
+    <div className="w-[90%] m-5 bg-white">
+     <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5'>COVID-19 Cases in India</h1>
+      <table className="w-full border-collapse border border-gray-300 m-4 text-lg">
         <thead>
-          <tr style={{ backgroundColor: "#f4f4f4" }}>
-            <th style={{ border: "1px solid #dddddd", padding: "12px" }}>State</th>
-            <th style={{ border: "1px solid #dddddd", padding: "12px" }}>Total Cases</th>
-            <th style={{ border: "1px solid #dddddd", padding: "12px" }}>Active Cases</th>
-            <th style={{ border: "1px solid #dddddd", padding: "12px" }}>Recovered</th>
-            <th style={{ border: "1px solid #dddddd", padding: "12px" }}>Deaths</th>
+          <tr className="bg-gray-200">
+            <th className="border border-gray-300 px-4 py-2">State</th>
+            <th className="border border-gray-300 px-4 py-2">Total Cases</th>
+            <th className="border border-gray-300 px-4 py-2">Active Cases</th>
+            <th className="border border-gray-300 px-4 py-2">Recovered</th>
+            <th className="border border-gray-300 px-4 py-2">Deaths</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((row, index) => (
-            <tr
-              key={index}
-              style={{ backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#fff" }}
-            >
-              <td style={{ border: "1px solid #dddddd", padding: "12px" }}>{row.state}</td>
-              <td style={{ border: "1px solid #dddddd", padding: "12px" }}>
-                {row.totalCases.toLocaleString()}
-              </td>
-              <td style={{ border: "1px solid #dddddd", padding: "12px" }}>
-                {row.activeCases.toLocaleString()}
-              </td>
-              <td style={{ border: "1px solid #dddddd", padding: "12px" }}>
-                {row.recovered.toLocaleString()}
-              </td>
-              <td style={{ border: "1px solid #dddddd", padding: "12px" }}>
-                {row.deaths.toLocaleString()}
-              </td>
-            </tr>
-          ))}
-        </tbody>
+  {data.map((row, index) => (
+    <tr
+      key={index}
+      className={`border border-gray-300 hover:bg-gray-100 ${
+        index % 2 === 0 ? 'bg-gray-50' : ''
+      }`}
+    >
+      <td className="border border-gray-300 px-4 py-2">{row.state}</td>
+      <td className="border border-gray-300 px-4 py-2">{row.totalCases.toLocaleString()}</td>
+      <td className="border border-gray-300 px-4 py-2">{row.activeCases.toLocaleString()}</td>
+      <td className="border border-gray-300 px-4 py-2">{row.recovered.toLocaleString()}</td>
+      <td className="border border-gray-300 px-4 py-2">{row.deaths.toLocaleString()}</td>
+    </tr>
+  ))}
+</tbody>
       </table>
     </div>
   );
 };
 
-export default  memo( CovidTable);
+export default memo(CovidTable);

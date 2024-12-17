@@ -40,7 +40,7 @@ const DataListing = () => {
   }
 
   return (
-    <div>
+    <div >
       <CovidTable data={covidData} />
     </div>
   );

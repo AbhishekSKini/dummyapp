@@ -1,9 +1,7 @@
 import Plot from 'react-plotly.js';
-import { CovidDataItem, CovidTableProps } from "../../types/type";
-interface PieChartProps {
-    data: CovidDataItem; // Typing the prop `data` as CovidDataItem
-}
-const PieChart:React.FC<PieChartProps> = ({ data }) => {
+import { ChartProps } from "../../types/type";
+
+const PieChart: React.FC<ChartProps> = ({ data }) => {
     // Calculate total for percentage calculation
     const total = data.totalCases + data.activeCases + data.recovered + data.deaths;
 
@@ -18,7 +16,7 @@ const PieChart:React.FC<PieChartProps> = ({ data }) => {
     const colors = ['#FFB347', '#77DD77', '#FF6961'];
 
     return (
-        <div className="pie-chart-container">
+        <div className=" bg-white p-4  rounded-lg shadow-md  mt-2">
             <Plot
                 data={[
                     {
@@ -37,11 +35,12 @@ const PieChart:React.FC<PieChartProps> = ({ data }) => {
                 layout={{
                     title: `COVID-19 Statistics Distribution for ${data.state}`,
                     height: 400,
-                    width: 500,
+                    width: 1100,
                     showlegend: true,
                     legend: {
                         orientation: 'v',
-                        y: -0.1
+                        y: -0.1,
+                        x: 0
                     }
                 }}
                 config={{

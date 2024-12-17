@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import PieChart from './PieChart';
-// import LineChart from './LineChart';
-// import MapView from './MapView';
+import LineChart from "./LineChart"
+import MapView from './MapView';
 import { RootState } from '../../redux/store';
 import { CovidDataItem } from "../../types/type";
 const DataView = () => {
@@ -38,29 +38,30 @@ const DataView = () => {
    
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>COVID-19 Statistics</h1>
+        <div className=' ml-10 mr-10 mt-10'>
+           <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5'>COVID-19 Statistics</h1>
             
             {/* Dropdown Filter */}
-            <div style={{ marginBottom: "20px" }}>
-                <label htmlFor="stateFilter">Filter by State: </label>
-                <select
-                    id="stateFilter"
-                    value={selectedState}
-                    onChange={(e) => setSelectedState(e.target.value)}
-                >
-                    <option value="Countrywide">Countrywide</option>
-                    {covidData.map((data) => (
-                        <option key={data.state} value={data.state}>
-                            {data.state}
-                        </option>
-                    ))}
-                </select>
-            </div>
+            <div className=" mb-10 mt-5 flex justify-center">
+    <label htmlFor="stateFilter" className="mr-2 text-gray-700 ">Filter by State:</label>
+    <select
+      id="stateFilter"
+      className="bg-gray-100 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
+      value={selectedState}
+      onChange={(e) => setSelectedState(e.target.value)}
+    >
+      <option value="Countrywide">Countrywide</option>
+      {covidData.map((data) => (
+        <option key={data.state} value={data.state}>
+          {data.state}
+        </option>
+      ))}
+    </select>
+  </div>
             
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+            <div  className='flex flex-wrap  gap-5 w-full  '>
                 {/* Cards */}
-                <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+                <div    className='flex  flex-wrap gap-20 '>
                     <div className="card">
                         <h2>Total Cases</h2>
                         <p>{filteredData.totalCases.toLocaleString()}</p>
@@ -80,16 +81,19 @@ const DataView = () => {
                 </div>
 
                 {/* Pie Chart */}
-                <div style={{ marginTop: '20px', width: '100%' }}>
+                <div >
                     <PieChart data={filteredData} />
                 </div>
 
                 {/* Map View */}
-                {/* <MapView data={filteredData} /> */}
+          
+                <MapView data={filteredData} />
+          
+       
 
                 {/*Line Chart */}
-                <div style={{ marginTop: "30px" }}>
-                    {/* <LineChart data={filteredData} /> */}
+                <div >
+                    <LineChart data={filteredData} />
                 </div>
             </div>
         </div>
