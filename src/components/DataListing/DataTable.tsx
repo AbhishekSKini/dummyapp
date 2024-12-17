@@ -1,8 +1,9 @@
 import React, { memo } from "react";
+import { CovidTableProps } from "../../types/type";
 
-const CovidTable = ({ data }) => {
+const CovidTable: React.FC<CovidTableProps> = ({ data }) => {
 
-   
+
     
   return (
     <div>

@@ -1,7 +1,9 @@
-import React from 'react';
 import Plot from 'react-plotly.js';
-
-const PieChart = ({ data }) => {
+import { CovidDataItem, CovidTableProps } from "../../types/type";
+interface PieChartProps {
+    data: CovidDataItem; // Typing the prop `data` as CovidDataItem
+}
+const PieChart:React.FC<PieChartProps> = ({ data }) => {
     // Calculate total for percentage calculation
     const total = data.totalCases + data.activeCases + data.recovered + data.deaths;
 

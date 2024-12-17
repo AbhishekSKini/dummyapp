@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import PieChart from './PieChart';
-import LineChart from './LineChart';
-import MapView from './MapView';
-
+// import LineChart from './LineChart';
+// import MapView from './MapView';
+import { RootState } from '../../redux/store';
+import { CovidDataItem } from "../../types/type";
 const DataView = () => {
-    const [selectedState, setSelectedState] = useState("Countrywide");
-    const covidDataFromStore = useSelector((state)=>state.covidDataStore.data);
-    const [covidData, setCovidData] = useState([]);
+    const [selectedState, setSelectedState] = useState<string>("Countrywide");
+    
+    // UseSelector with RootState to get the typed state
+    const covidDataFromStore = useSelector((state: RootState) => state.covidDataStore.data);
+
+    const [covidData, setCovidData] = useState<CovidDataItem[]>([]);
 
     useEffect(()=>{
         setCovidData(covidDataFromStore);
@@ -31,21 +35,7 @@ const DataView = () => {
             deaths: 0,
         });
 
-    // Prepare time series data for the selected state
-    const getTimeSeriesData = () => {
-        if (selectedState === "Countrywide") {
-            // Return countrywide aggregated data
-            return covidData.map(data => ({
-                totalCases: data.totalCases,
-                activeCases: data.activeCases,
-                recovered: data.recovered,
-                deaths: data.deaths
-            }));
-        } else {
-            // Return data for selected state
-            return [filteredData];
-        }
-    };
+   
 
     return (
         <div style={{ padding: "20px" }}>
@@ -95,11 +85,11 @@ const DataView = () => {
                 </div>
 
                 {/* Map View */}
-                <MapView data={filteredData} />
+                {/* <MapView data={filteredData} /> */}
 
-                {/* Add Line Chart */}
+                {/*Line Chart */}
                 <div style={{ marginTop: "30px" }}>
-                    <LineChart data={filteredData} />
+                    {/* <LineChart data={filteredData} /> */}
                 </div>
             </div>
         </div>
