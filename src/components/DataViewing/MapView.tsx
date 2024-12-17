@@ -37,7 +37,7 @@ const MapView: React.FC<MapViewProps> = ({ data }) => {
 
   return (
     <div className="h-[520px] w-full bg-white p-4 rounded-lg shadow-md mx-auto mt-2">
-      <h1 className="text-gray-700 text-lg font-normal flex justify-center ">
+      <h1 className="text-gray-700 text-lg font-normal flex justify-center text-[20px]">
         Map View of &nbsp;<span>{data.state}</span>&nbsp; for COVID-19
       </h1>
       <div className=" h-[440px] mt-5">

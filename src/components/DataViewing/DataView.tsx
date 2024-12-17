@@ -39,7 +39,7 @@ const DataView = () => {
 
     return (
         <div className=' ml-10 mr-10 mt-10'>
-           <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5'>COVID-19 Statistics</h1>
+           <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5 text-[20px]'>COVID-19 Statistics</h1>
             
             {/* Dropdown Filter */}
             <div className=" mb-10 mt-5 flex justify-center">

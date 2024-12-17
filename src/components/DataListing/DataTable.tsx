@@ -4,7 +4,7 @@ import { CovidTableProps } from "../../types/type";
 const CovidTable: React.FC<CovidTableProps> = ({ data }) => {
   return (
     <div className="w-[90%] m-5 bg-white">
-     <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5'>COVID-19 Cases in India</h1>
+     <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5 text-[20px]'>COVID-19 Cases in India</h1>
       <table className="w-full border-collapse border border-gray-300 m-4 text-lg">
         <thead>
           <tr className="bg-gray-200">

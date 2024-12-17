@@ -16,7 +16,7 @@ const PieChart: React.FC<ChartProps> = ({ data }) => {
     const colors = ['#FFB347', '#77DD77', '#FF6961'];
 
     return (
-        <div className=" bg-white p-4  rounded-lg shadow-md  mt-2">
+        <div className=" bg-white p-4  rounded-lg shadow-md  mt-2 text-[20px]">
             <Plot
                 data={[
                     {

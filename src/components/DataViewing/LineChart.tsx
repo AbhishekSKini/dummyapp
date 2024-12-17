@@ -117,7 +117,7 @@ const LineChart:React.FC<ChartProps> = ({ data }) => {
   };
 
   return (
-    <div className=" bg-white p-4  rounded-lg shadow-md w-90  mt-2   ">
+    <div className=" bg-white p-4  rounded-lg shadow-md w-90  mt-2  text-[20px] ">
       <Plot data={traces} layout={layout} config={config} />
     </div>
   );
