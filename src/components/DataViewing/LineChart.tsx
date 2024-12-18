@@ -5,8 +5,8 @@ import { Data, Layout } from 'plotly.js';
 
 
 const LineChart:React.FC<ChartProps> = ({ data }) => {
-  // Create x-axis points (using the same value for start and end to create horizontal lines)
-  const xValues = [0, 1]; // This will create horizontal lines
+  // Create x-axis points 
+  const xValues = [0, 1];
 
   const traces: Data[] = [
     {
@@ -14,7 +14,7 @@ const LineChart:React.FC<ChartProps> = ({ data }) => {
       x: xValues,
       y: [data.totalCases, data.totalCases], // Same y-value for horizontal line
       type: 'scatter',
-      mode: 'markers', // Correct mode for markers
+      mode: 'markers', 
       line: {
         color: '#36A2EB',
         width: 5,
@@ -63,7 +63,7 @@ const LineChart:React.FC<ChartProps> = ({ data }) => {
     xaxis: {
       showgrid: false,
       zeroline: false,
-      showticklabels: false, // Hide x-axis labels since they're not meaningful
+      showticklabels: false, // Hide x-axis labels
       fixedrange: true, // Disable x-axis zooming
     },
     yaxis: {
@@ -81,7 +81,6 @@ const LineChart:React.FC<ChartProps> = ({ data }) => {
       x: 0.5,
     },
     hovermode: 'closest',
-    // Add shapes for dotted vertical lines (optional)
     shapes: [
       {
         type: 'line',

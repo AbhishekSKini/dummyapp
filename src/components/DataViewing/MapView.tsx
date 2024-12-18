@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { CovidDataItem, Coordinates } from "../../types/type";
-// Fix for default marker icon
+import { CovidDataItem} from "../../types/type";
 
+// Fix for default marker icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -25,7 +25,7 @@ const MapUpdater: React.FC<MapUpdaterProps> = ({ center }) => {
 };
 // Props for the component
 interface MapViewProps {
-  data: CovidDataItem; // Accept an array or a single item
+  data: CovidDataItem; 
 }
 const MapView: React.FC<MapViewProps> = ({ data }) => {
   const CountryCoordinates: [number, number] = [20.5937, 78.9629];

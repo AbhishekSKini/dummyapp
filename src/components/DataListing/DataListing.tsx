@@ -8,14 +8,13 @@ import Loader from "../Loader/Loader";
 const DataListing = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const dispatch = useDispatch(); // Initialize Redux dispatch
-
+  const dispatch = useDispatch(); 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
         const response = await getData();
-        dispatch(setCovidDataAction(response.data)); // Dispatch the data to Redux store
+        dispatch(setCovidDataAction(response.data)); 
       } catch (err) {
         setError("Failed to fetch data");
         console.error("Error fetching data:", err);
