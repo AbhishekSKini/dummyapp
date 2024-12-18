@@ -1,7 +1,10 @@
 import React, { memo } from "react";
-import { CovidTableProps } from "../../types/type";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
-const CovidTable: React.FC<CovidTableProps> = ({ data }) => {
+const CovidTable: React.FC = () => {
+   // UseSelector with RootState to get the typed state
+   const covidDataFromStore = useSelector((state: RootState) => state.covidDataStore.data);
   return (
     <div className="w-[90%] m-5 bg-white">
      <h1 className='text-gray-700 text-lg font-normal flex justify-center mb-5 text-[20px]'>COVID-19 Cases in India</h1>
@@ -16,7 +19,7 @@ const CovidTable: React.FC<CovidTableProps> = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-  {data.map((row, index) => (
+  {covidDataFromStore.map((row, index) => (
     <tr
       key={index}
       className={`border border-gray-300 hover:bg-gray-100 ${

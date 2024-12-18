@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import  {  useEffect, useState } from "react";
 import { getData } from "../../apiCall/apiCall";
-import CovidTable from "./DataTable";
+import CovidTable from "../DataListing/DataTable";
 import { useDispatch } from "react-redux";
 import { setCovidDataAction } from "../../redux/covidDataSlice";
-import { CovidDataItem } from "../../types/type";
+import Loader from "../Loader/Loader";
 
 const DataListing = () => {
-  const [covidData, setCovidData] = useState<CovidDataItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const dispatch = useDispatch(); // Initialize Redux dispatch
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
         const response = await getData();
-        setCovidData(response.data);
         dispatch(setCovidDataAction(response.data)); // Dispatch the data to Redux store
       } catch (err) {
         setError("Failed to fetch data");
@@ -29,16 +28,15 @@ const DataListing = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
-
   if (error) {
     return <div>Error: {error}</div>;
   }
 
   return (
     <div>
-      <CovidTable data={covidData} />
+      <CovidTable />
     </div>
   );
 };

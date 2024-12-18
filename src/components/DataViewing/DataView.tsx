@@ -5,6 +5,7 @@ import LineChart from "./LineChart"
 import MapView from './MapView';
 import { RootState } from '../../redux/store';
 import { CovidDataItem } from "../../types/type";
+import Loader from '../Loader/Loader';
 const DataView = () => {
     const [selectedState, setSelectedState] = useState<string>("Countrywide");
     
@@ -35,7 +36,10 @@ const DataView = () => {
             deaths: 0,
         });
 
-   
+   if(!covidData.length)
+   {
+    return <Loader/>
+   }
 
     return (
         <div className=' ml-10 mr-10 mt-10'>
